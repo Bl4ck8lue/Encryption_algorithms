@@ -87,7 +87,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_first_key"/>
+      <widget class="QLineEdit" name="lineEdit_first_key">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>

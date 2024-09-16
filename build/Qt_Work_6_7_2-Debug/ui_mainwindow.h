@@ -144,6 +144,7 @@ public:
         label_choose->setText(QCoreApplication::translate("MainWindow", "\320\222\321\213\320\261\320\265\321\200\320\270\321\202\320\265 \321\204\320\260\320\271\320\273", nullptr));
         btn_choose->setText(QCoreApplication::translate("MainWindow", "\320\236\320\261\320\267\320\276\321\200", nullptr));
         label_first_key->setText(QCoreApplication::translate("MainWindow", "1 \320\272\320\273\321\216\321\207", nullptr));
+        lineEdit_first_key->setText(QString());
         label_second_key->setText(QCoreApplication::translate("MainWindow", "2 \320\272\320\273\321\216\321\207", nullptr));
     } // retranslateUi
 
