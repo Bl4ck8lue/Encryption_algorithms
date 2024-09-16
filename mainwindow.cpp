@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QFileDialog>
+#include <QMessageBox>
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -33,7 +34,7 @@ void MainWindow::on_btn_crypt_clicked()
 
     while (getline(ReadStream, str))
     {
-        ofstream WriteStream("out.txt");//открываем поток на запись
+        ofstream WriteStream("encrypted_text.txt");//открываем поток на запись
 
         int lenght = str.length();
 
@@ -49,6 +50,12 @@ void MainWindow::on_btn_crypt_clicked()
         WriteStream.close();//закрываем поток на запись
     }
 
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Информационное сообщение");
+    msgBox.setText("Текст из выбранного файла\nзашифрован и сохранён в файл encrypted_text.txt");
+    msgBox.setIcon(QMessageBox::Information); // Установите иконку
+    msgBox.setStandardButtons(QMessageBox::Ok); // Кнопка "ОК"
+    msgBox.exec(); // Показать сообщение
 }
 
 
@@ -75,7 +82,7 @@ void MainWindow::on_btn_decrypt_clicked()
 
         while (getline(ReadStream, str))
         {
-            ofstream WriteStream("out2.txt");//открываем поток на запись
+            ofstream WriteStream("decrypted_text.txt");//открываем поток на запись
             int lenght = str.length();
 
             //цикл посимвольного шифрования
@@ -91,6 +98,11 @@ void MainWindow::on_btn_decrypt_clicked()
         }
 
     }
-
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Информационное сообщение");
+    msgBox.setText("Текст из выбранного файла\nрасшифрован и сохранён в файл decrypted_text.txt");
+    msgBox.setIcon(QMessageBox::Information); // Установите иконку
+    msgBox.setStandardButtons(QMessageBox::Ok); // Кнопка "ОК"
+    msgBox.exec(); // Показать сообщение
 }
 
