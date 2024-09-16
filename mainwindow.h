@@ -22,6 +22,8 @@ private slots:
 
     void on_btn_choose_clicked();
 
+    void on_btn_decrypt_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
